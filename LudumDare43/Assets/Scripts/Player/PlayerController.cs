@@ -4,9 +4,9 @@
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
-	private float moveSpeed = 5f;
+	public float moveSpeed = 5f;
 	[SerializeField]
-	private float lookSensativity = 3f;
+	public float lookSensativity = 3f;
 
 	private Camera cam;
 	private PlayerMovement movement;
@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		movement = GetComponent<PlayerMovement>();
 		cam = GetComponentInChildren<Camera>();
+		GameObject.FindWithTag("TourchModel").GetComponent<MeshRenderer>().enabled = false;
 	}
 
 	private void Update()
@@ -36,17 +37,14 @@ public class PlayerController : MonoBehaviour {
 			Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2));
 			RaycastHit hit;
 
-			if (Physics.Raycast(ray, out hit))
+		
+			if ((Physics.Raycast(ray, out hit)) && (hit.distance < 3f))
 			{
 				if (hit.transform.tag == "Pickupable")
 				{
 					print("you hit:" + hit.transform.name);
-					hit.transform.GetComponent<Pickupable>().Pickup(hit.transform.name);
-										
-				}
-
-
-				
+					hit.transform.GetComponent<Pickupable>().Pickup(hit.transform.name);					
+				}				
 			}
 
 		}

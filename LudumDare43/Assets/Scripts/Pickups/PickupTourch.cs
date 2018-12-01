@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickupTourch : Pickupable {
 
+	
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,5 +19,14 @@ public class PickupTourch : Pickupable {
 	public override void Run()
 	{
 		Debug.Log("i am tourch");
+
+		// GameObject tourch = player.transform.Find("TourchModel").gameObject;
+		GameObject.FindWithTag("TourchModel").GetComponent<MeshRenderer>().enabled = true;
+		
+		
+
+		// Debug.Log(tourch);
+
+		Destroy(gameObject);
 	}
 }

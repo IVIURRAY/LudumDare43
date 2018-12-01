@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crosshair : MonoBehaviour {
+public class PlayerGUI : MonoBehaviour {
 
 	public Texture2D crosshairImage;
 
@@ -12,5 +12,11 @@ public class Crosshair : MonoBehaviour {
 		float yMin = (Screen.height / 2) - (crosshairImage.height / 2);
 		GUI.DrawTexture(new Rect(xMin, yMin, crosshairImage.width, crosshairImage.height), crosshairImage);
 	}
+
+	public void EnableTouch()
+	{
+
+	}
+
 
 }

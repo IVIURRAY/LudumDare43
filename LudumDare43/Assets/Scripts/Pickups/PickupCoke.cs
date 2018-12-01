@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PickupCoke : Pickupable
 {
-
 	PlayerController controller;
 
-	private bool IsActive = false;
+	public float effectDuration = 10f;
 	private float originalMoveSpeed;
 	private float originalLookSensativity;
 
@@ -19,22 +18,22 @@ public class PickupCoke : Pickupable
 		originalMoveSpeed = controller.moveSpeed;
 	}
 
-	private void Update()
-	{
-		if (IsActive)
-		{
-			// TODO - slow the player back to noraml after a while.
-		}
-	}
-
 	public override void Run()
 	{
-		IsActive = true;
 		Debug.Log("Im cocaine.");
-
 		controller.moveSpeed = controller.moveSpeed * 4;
 		controller.lookSensativity = controller.lookSensativity * 4;
 
 	}
+
+	public override IEnumerator Revert()
+	{
+		yield return new WaitForSeconds(effectDuration);
+		controller.moveSpeed = originalMoveSpeed;
+		controller.lookSensativity = originalLookSensativity;
+		Debug.Log("Reverting movement speed params - Coke.");
+		Destroy(gameObject);
+	}
+	
 
 }

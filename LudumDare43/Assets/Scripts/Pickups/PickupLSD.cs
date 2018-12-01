@@ -1,8 +1,11 @@
 ﻿using UnityEngine.PostProcessing;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupLSD : Pickupable {
 
+	public float effectDuration = 10f;
 	private PostProcessingProfile postProcessing;
 
 	// Use this for initialization
@@ -11,17 +14,18 @@ public class PickupLSD : Pickupable {
 		postProcessing.motionBlur.enabled = false;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public override void Run()
 	{
 		Debug.Log("Im LSD");
+		postProcessing.motionBlur.enabled = true;
+	}
 
-		postProcessing.motionBlur.enabled = true; // .settings.frameBlending
-
+	public override IEnumerator Revert()
+	{
+		yield return new WaitForSeconds(effectDuration);
+		postProcessing.motionBlur.enabled = false;
+		Debug.Log("Reverting camera effects.");
+		Destroy(gameObject);
 	}
 
 }

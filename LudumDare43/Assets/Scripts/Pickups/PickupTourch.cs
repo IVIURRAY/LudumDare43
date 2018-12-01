@@ -15,9 +15,9 @@ public class PickupTourch : Pickupable {
 	public override void Run()
 	{
 		Debug.Log("i am tourch");
-
 		tourch.GetComponent<MeshRenderer>().enabled = true;
 		tourch.GetComponent<Light>().enabled = true;		
-		Destroy(gameObject);
+		Destroy(gameObject);		
 	}
+
 }

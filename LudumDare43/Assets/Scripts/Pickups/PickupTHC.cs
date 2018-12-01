@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class PickupTHC : Pickupable
 {
-	public float slowdownFactor = 0.5f;
-	public float slowdownLength = 5f;
-	
-	// Update is called once per frame
-	void Update () {
-		Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
-		Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
-		Debug.Log(Time.timeScale);
+	PlayerController controller;
 
+	public float effectDuration = 10f;
+	private float originalMoveSpeed;
+	private float originalLookSensativity;
+
+	// Use this for initialization
+	void Start()
+	{
+		controller = GameObject.FindObjectOfType<PlayerController>();
+		originalLookSensativity = controller.lookSensativity;
+		originalMoveSpeed = controller.moveSpeed;
 	}
 
 	public override void Run()
 	{
-		Debug.Log("Im a THC");
+		Debug.Log("Im THC.");
+		controller.moveSpeed = controller.moveSpeed / 4;
+		controller.lookSensativity = controller.lookSensativity / 4;
 
-		// Slow down time
-		Time.timeScale = slowdownFactor;
-		Time.fixedDeltaTime = Time.timeScale * 0.02f;
 	}
+
+	public override IEnumerator Revert()
+	{
+		yield return new WaitForSeconds(effectDuration);
+		controller.moveSpeed = originalMoveSpeed;
+		controller.lookSensativity = originalLookSensativity;
+		Debug.Log("Reverting movement speed params - THC.");
+		Destroy(gameObject);
+	}
+
 }

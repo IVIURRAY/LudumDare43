@@ -28,7 +28,21 @@ public class Pickupable : MonoBehaviour {
 	{
 		Pickupable pickupScript = pickupScripts[name];
 		pickupScript.Run();
-		Destroy(gameObject);
+		Disapear();
+		StartCoroutine("Revert", 3);
+	}
+
+	private void Disapear()
+	{
+		// We can't destory the object yet as the pickups all revert
+		// their effects so need to keep them aroud until they're finsihed.
+		gameObject.GetComponent<Collider>().enabled = false;
+		gameObject.GetComponent<Renderer>().enabled = false;
+	}
+
+	public virtual IEnumerator Revert() {
+		Debug.Log("You should override these.");
+		yield return null;
 	}
 
 	public virtual void Run()

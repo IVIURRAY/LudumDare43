@@ -9,7 +9,8 @@ public class Pickupable : MonoBehaviour {
 	private void Start()
 	{
 		PickupTourch p_touch = (PickupTourch)FindObjectOfType(typeof(PickupTourch));
-		
+		Debug.Log(p_touch);
+
 		pickupScripts.Add("Tourch", p_touch);
 		
 	}
@@ -21,7 +22,7 @@ public class Pickupable : MonoBehaviour {
 		pickupScript.Run();
 	}
 
-	public void Run()
+	public virtual void Run()
 	{
 		Debug.Log("You need to override Run. In base class.");
 	}

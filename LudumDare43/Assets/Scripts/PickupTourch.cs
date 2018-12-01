@@ -14,7 +14,7 @@ public class PickupTourch : Pickupable {
 		
 	}
 
-	public new void Run()
+	public override void Run()
 	{
 		Debug.Log("i am tourch");
 	}

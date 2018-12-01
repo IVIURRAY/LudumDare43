@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cde64167ae35fdf41a5aa9a67a86fe38
+guid: 7349b216a8736db4c83801997db516a2
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -11,7 +11,22 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Plane
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brass
+    second: {fileID: 2100000, guid: e7f5b5e5eef1e32439e4d737453eb9bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Candle
+    second: {fileID: 2100000, guid: b6e47924a1ce6054c8765989f63d52e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wick
+    second: {fileID: 2100000, guid: 36410a72d17fef246926643dadc29906, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

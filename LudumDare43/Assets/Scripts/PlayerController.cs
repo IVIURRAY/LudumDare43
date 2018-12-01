@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void Update()
 	{
+		
 		MovePlayer();
 
 		CheckForPickup();
@@ -26,9 +27,13 @@ public class PlayerController : MonoBehaviour {
 
 	private void CheckForPickup()
 	{
+
+		// Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+		// Debug.DrawRay(ray.origin, ray.direction * 10, Color.black);
+
 		if (Input.GetMouseButtonDown(0))
 		{
-			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+			Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2));
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit))

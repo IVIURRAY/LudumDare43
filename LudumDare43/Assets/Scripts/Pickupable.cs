@@ -6,7 +6,7 @@ public class Pickupable : MonoBehaviour {
 
 	private Dictionary<string, Pickupable> pickupScripts = new Dictionary<string, Pickupable>();
 
-	private void Start()
+	private void Awake()
 	{
 		PickupTourch p_touch = (PickupTourch)FindObjectOfType(typeof(PickupTourch));
 		Debug.Log(p_touch);

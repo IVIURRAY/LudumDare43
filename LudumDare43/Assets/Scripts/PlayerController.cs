@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour {
 				if (hit.transform.tag == "Pickupable")
 				{
 					print("you hit:" + hit.transform.name);
+					hit.transform.GetComponent<Pickupable>().Pickup();
+
+					
 				}
 				
 			}

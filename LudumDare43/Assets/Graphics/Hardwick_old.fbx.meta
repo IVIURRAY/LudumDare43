@@ -1,27 +1,35 @@
 fileFormatVersion: 2
-guid: 992bfe7d19f68ad42a860c32caa0d55e
+guid: f0bf5d72223fa204ab42b5ba6255daaa
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Ceiling
-    100002: Floor
-    100004: //RootNode
-    100006: Walls
+    100002: floor
+    100004: Ground
+    100006: //RootNode
+    100008: Lamp
+    100010: Walls
     400000: Ceiling
-    400002: Floor
-    400004: //RootNode
-    400006: Walls
-    2100000: Material.001
-    2100002: Stone
+    400002: floor
+    400004: Ground
+    400006: //RootNode
+    400008: Lamp
+    400010: Walls
+    2100000: No Name
     2300000: Ceiling
-    2300002: Floor
-    2300004: Walls
+    2300002: floor
+    2300004: Ground
+    2300006: Walls
     3300000: Ceiling
-    3300002: Floor
-    3300004: Walls
-    4300000: Ceiling
-    4300002: Floor
-    4300004: Walls
+    3300002: floor
+    3300004: Ground
+    3300006: Walls
+    4300000: Ground
+    4300002: Ceiling
+    4300004: floor
+    4300006: Walls
+    10800000: Lamp
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1

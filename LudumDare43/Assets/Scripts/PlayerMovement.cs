@@ -5,18 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour {
 
-	[SerializeField]
-	private Camera cam;
-
+	
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 rotation = Vector3.zero;
 	private Vector3 cameraRotation = Vector3.zero;
+	private Camera cam;
 
 	private Rigidbody rb;
 
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
+		cam = GetComponentInChildren<Camera>();
 	}
 
 	// Gets the movement vector

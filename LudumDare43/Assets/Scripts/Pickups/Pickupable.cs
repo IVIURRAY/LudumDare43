@@ -19,6 +19,8 @@ public class Pickupable : MonoBehaviour {
 		pickupScripts.Add("THC", p_THC);
 		PickupCoke p_Coke = (PickupCoke)FindObjectOfType(typeof(PickupCoke));
 		pickupScripts.Add("Coke", p_Coke);
+		PickupLSD p_LSD = (PickupLSD)FindObjectOfType(typeof(PickupLSD));
+		pickupScripts.Add("LSD", p_LSD);
 	}
 
 
@@ -26,6 +28,7 @@ public class Pickupable : MonoBehaviour {
 	{
 		Pickupable pickupScript = pickupScripts[name];
 		pickupScript.Run();
+		Destroy(gameObject);
 	}
 
 	public virtual void Run()

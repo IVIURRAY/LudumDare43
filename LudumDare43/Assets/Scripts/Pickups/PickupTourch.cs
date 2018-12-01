@@ -16,7 +16,8 @@ public class PickupTourch : Pickupable {
 	{
 		Debug.Log("i am tourch");
 		tourch.GetComponent<MeshRenderer>().enabled = true;
-		tourch.GetComponent<Light>().enabled = true;		
+		tourch.GetComponent<Light>().enabled = true;
+		tourch.GetComponentInChildren<ParticleSystem>().Play();
 		Destroy(gameObject);		
 	}
 

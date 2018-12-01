@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PickupTHC : Pickupable
 {
-	public float slowdownFactor = 0.05f;
+	public float slowdownFactor = 0.5f;
 	public float slowdownLength = 5f;
 	
 	// Update is called once per frame
 	void Update () {
 		Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
 		Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
+		Debug.Log(Time.timeScale);
+
 	}
 
 	public override void Run()

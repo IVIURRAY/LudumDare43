@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  slowdownFactor: 0.05
+  slowdownFactor: 0.5
   slowdownLength: 5
 --- !u!65 &424373533
 BoxCollider:

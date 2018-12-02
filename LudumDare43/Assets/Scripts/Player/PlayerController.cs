@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerController : MonoBehaviour {
@@ -6,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 	[SerializeField]
 	private float heath = 100;
 	public bool warming = false;
+	public Image healthbar;
+
 
 	[SerializeField]
 	public float moveSpeed = 5f;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 		MovePlayer();
 		CheckForPickup();
 		Chill();
+		UpdateHealthBar();
 	}
 
 	public void WarmUp()
@@ -39,9 +44,24 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (!warming)
 		{
-			heath -= 1 * Time.deltaTime * 4;
-			heath = Mathf.Clamp(heath, 0f, 100f);
+			heath -= 1 * Time.deltaTime * 8;
 		}
+
+		if (heath < 0)
+		{
+			Die();
+		}
+	}
+
+	private void Die()
+	{
+		Debug.Log("you died!");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	private void UpdateHealthBar()
+	{
+		healthbar.fillAmount = heath / 100;
 	}
 
 	private void CheckForPickup()

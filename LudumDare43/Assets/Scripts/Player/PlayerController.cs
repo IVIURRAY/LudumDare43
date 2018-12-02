@@ -4,6 +4,10 @@
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
+	private float heath = 100;
+	public bool warming = false;
+
+	[SerializeField]
 	public float moveSpeed = 5f;
 	[SerializeField]
 	public float lookSensativity = 3f;
@@ -20,10 +24,24 @@ public class PlayerController : MonoBehaviour {
 
 	private void Update()
 	{
-		
 		MovePlayer();
-
 		CheckForPickup();
+		Chill();
+	}
+
+	public void WarmUp()
+	{
+		heath += 1 * Time.deltaTime * 4;
+		heath = Mathf.Clamp(heath, 0f, 100f);
+	}
+
+	private void Chill()
+	{
+		if (!warming)
+		{
+			heath -= 1 * Time.deltaTime * 4;
+			heath = Mathf.Clamp(heath, 0f, 100f);
+		}
 	}
 
 	private void CheckForPickup()

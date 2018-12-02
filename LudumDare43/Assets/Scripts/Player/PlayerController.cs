@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour {
 
 	private Camera cam;
 	private PlayerMovement movement;
+	private AudioController music;
 
 	private void Start()
 	{
 		movement = GetComponent<PlayerMovement>();
 		cam = GetComponentInChildren<Camera>();
 		GameObject.FindWithTag("TourchModel").GetComponent<MeshRenderer>().enabled = false;
+		music = GameObject.FindObjectOfType<AudioController>();
 	}
 
 	private void Update()
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour {
 	private void Die()
 	{
 		Debug.Log("you died!");
+		music.ExitHouse();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}
 

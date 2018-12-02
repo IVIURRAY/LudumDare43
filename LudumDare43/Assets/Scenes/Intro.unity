@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Modeling: Chris Donaldson'
+  m_Text: 'Modeling: Fishonadish'
 --- !u!222 &668109
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10352,7 +10352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Programming: Haydn Murray'
+  m_Text: 'Programming: IVIURRAY'
 --- !u!222 &1774988255
 CanvasRenderer:
   m_ObjectHideFlags: 0

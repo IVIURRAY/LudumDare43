@@ -18,12 +18,14 @@ public class PickupLSD : Pickupable {
 	{
 		Debug.Log("Im LSD");
 		postProcessing.motionBlur.enabled = true;
+		postProcessing.colorGrading.enabled = false;
 	}
 
 	public override IEnumerator Revert()
 	{
 		yield return new WaitForSeconds(effectDuration);
 		postProcessing.motionBlur.enabled = false;
+		postProcessing.colorGrading.enabled = true;
 		Debug.Log("Reverting camera effects.");
 		Destroy(gameObject);
 	}

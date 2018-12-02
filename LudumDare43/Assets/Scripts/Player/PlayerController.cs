@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		Debug.Log("you died!");
 		music.ExitHouse();
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
 	}
 
 	private void UpdateHealthBar()

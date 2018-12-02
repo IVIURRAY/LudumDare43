@@ -12,6 +12,7 @@ public class PickupLSD : Pickupable {
 	void Start () {
 		postProcessing = FindObjectOfType<PostProcessingBehaviour>().profile;
 		postProcessing.motionBlur.enabled = false;
+		postProcessing.colorGrading.enabled = true;
 	}
 
 	public override void Run()

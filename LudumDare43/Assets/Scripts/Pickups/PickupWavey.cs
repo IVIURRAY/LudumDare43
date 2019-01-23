@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupLSD : Pickupable {
+public class PickupWavey : Pickupable {
 
 	public float effectDuration = 10f;
 	private PostProcessingProfile postProcessing;
@@ -17,7 +17,6 @@ public class PickupLSD : Pickupable {
 
 	public override void Run()
 	{
-		Debug.Log("Im LSD");
 		postProcessing.motionBlur.enabled = true;
 		postProcessing.colorGrading.enabled = false;
 	}

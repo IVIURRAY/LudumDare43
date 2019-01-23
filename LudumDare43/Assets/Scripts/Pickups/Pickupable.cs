@@ -15,12 +15,12 @@ public class Pickupable : MonoBehaviour {
 		// Populate the pickup scripts dict
 		PickupTourch p_touch = (PickupTourch)FindObjectOfType(typeof(PickupTourch));
 		pickupScripts.Add("Tourch", p_touch);
-		PickupTHC p_THC = (PickupTHC)FindObjectOfType(typeof(PickupTHC));
-		pickupScripts.Add("THC", p_THC);
-		PickupCoke p_Coke = (PickupCoke)FindObjectOfType(typeof(PickupCoke));
-		pickupScripts.Add("Coke", p_Coke);
-		PickupLSD p_LSD = (PickupLSD)FindObjectOfType(typeof(PickupLSD));
-		pickupScripts.Add("LSD", p_LSD);
+		PickupSlow p_Slow = (PickupSlow)FindObjectOfType(typeof(PickupSlow));
+		pickupScripts.Add("Slow", p_Slow);
+		PickupSpeed p_Speed = (PickupSpeed)FindObjectOfType(typeof(PickupSpeed));
+		pickupScripts.Add("Speed", p_Speed);
+		PickupWavey p_Wavey = (PickupWavey)FindObjectOfType(typeof(PickupWavey));
+		pickupScripts.Add("Wavey", p_Wavey);
 	}
 
 

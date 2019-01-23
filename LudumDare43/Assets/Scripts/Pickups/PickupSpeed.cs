@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupCoke : Pickupable
+public class PickupSpeed : Pickupable
 {
 	PlayerController controller;
 
@@ -20,7 +20,6 @@ public class PickupCoke : Pickupable
 
 	public override void Run()
 	{
-		Debug.Log("Im cocaine.");
 		controller.moveSpeed = controller.moveSpeed * 4;
 		controller.lookSensativity = controller.lookSensativity * 4;
 
@@ -31,7 +30,6 @@ public class PickupCoke : Pickupable
 		yield return new WaitForSeconds(effectDuration);
 		controller.moveSpeed = originalMoveSpeed;
 		controller.lookSensativity = originalLookSensativity;
-		Debug.Log("Reverting movement speed params - Coke.");
 		Destroy(gameObject);
 	}
 	
